@@ -1,0 +1,139 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #f97316;
+  --primary-dark: #ea580c;
+  --secondary: #64748b;
+}
+
+@font-face {
+  font-family: 'PP Pangaia';
+  src: url('/fonts/PPPangaia-Bold-BF654c530cc27f8.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Pangaia M';
+  src: url('/fonts/PPPangaia-Medium-BF654c530cc86d5.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}@font-face {
+  font-family: 'PP Pangaia';
+  src: url('/fonts/PPPangaia-Bold-BF654c530cc27f8.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Light';
+  src: url('/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold 
+           hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg
+           transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-orange-600 border-2 border-orange-600 px-6 py-3 rounded-lg font-semibold 
+           hover:bg-orange-50 transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-500 
+           transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 
+           after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 
+           hover:after:w-full;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-xl;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:-inset-0.5 before:bg-gradient-to-r before:from-orange-500 
+           before:to-orange-600 before:rounded-lg before:blur before:opacity-75 before:transition-opacity
+           before:duration-300 hover:before:opacity-100;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.8); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background Patterns */
+.bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.dark .bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+}
+
+/* Glass Effect */
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-orange-500 rounded-full hover:bg-orange-600 transition-colors;
+}

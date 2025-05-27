@@ -1,0 +1,5 @@
+documentId,excludedLinkIds,excludedViewIds,since,versionNumber,pageNumber,avg_duration
+doc1,[],[],0,1,1,120
+doc2,[],[],0,1,2,90
+doc3,[],[],0,1,3,150
+doc4,[],[],0,1,4,110

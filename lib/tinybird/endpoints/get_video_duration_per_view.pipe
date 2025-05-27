@@ -1,0 +1,19 @@
+VERSION 4
+
+NODE endpoint
+SQL >
+    %
+    SELECT
+        documentName,
+        SUM(duration) AS sum_duration
+    FROM
+        video_views__v3
+    ARRAY JOIN
+        playRecords__time AS time
+    WHERE
+        viewId = {{ String(viewId, required=True) }}
+        AND time >= {{ Int64(since, required=True) }}
+    GROUP BY
+        documentName
+    ORDER BY
+        documentName ASC;
